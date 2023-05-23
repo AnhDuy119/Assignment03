@@ -1,0 +1,42 @@
+/* Laptop */
+@media (min-width: 992px) {
+  .goals {
+    border: 20px solid blue;
+  }
+
+  .scope {
+    border: 20px solid blue;
+    border-top: 0;
+  }
+
+  .team {
+    border: 20px solid blue;
+    border-left: 0;
+  }
+
+  .primary {
+    border: 20px solid blue;
+    border-top: 0;
+    border-left: 0;
+  }
+
+  .timeline {
+    border: 20px solid blue;
+    border-left: 0;
+  }
+}
+
+/* Tablet, mobile */
+@media (max-width: 991px) {
+  .goals {
+    border: 20px solid blue;
+  }
+
+  .scope,
+  .team,
+  .primary,
+  .timeline {
+    border: 20px solid blue;
+    border-top: none;
+  }
+}

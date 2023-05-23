@@ -1,0 +1,152 @@
+@media (max-width: 768px) {
+  section > .container {
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
+
+  h2 {
+    font-size: 18px;
+    margin: 0px;
+  }
+
+  /* BANNER */
+  .banner-text h1 {
+    font-size: 28px;
+  }
+
+  /* NAVBAR */
+  .my-avatar,
+  #nav-bar div:nth-child(3) {
+    display: none;
+  }
+
+  #nav-bar .container {
+    font-size: 14px;
+  }
+
+  #nav-bar div {
+    border: 0;
+    margin-bottom: 10px;
+  }
+
+  /* THÔNG TIN CÁ NHÂN */
+  #about .container {
+    display: inline;
+  }
+
+  #target,
+  #personal-info {
+    padding: 15px;
+  }
+
+  /* THÔNG TIN NGHỀ NGHIỆP */
+  #job-info .container {
+    display: inline;
+  }
+
+  .job-block {
+    grid-template-columns: 30% auto;
+    padding: 15px;
+  }
+
+  .job-icon {
+    font-size: 20px;
+  }
+
+  .flex i {
+    font-size: 16px;
+  }
+
+  .flex i::after {
+    width: 40px;
+    height: 40px;
+    top: 0;
+    right: -1px;
+  }
+
+  #job-info li::after {
+    top: 5px;
+    left: -10px;
+  }
+
+  /* CHỨNG CHỈ - GIẢI THƯỞNG */
+  #certificate .container {
+    padding: 15px;
+  }
+
+  .certi {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    gap: 5px;
+  }
+
+  .certi-block {
+    margin-bottom: 20px;
+    display: inline;
+    position: relative;
+  }
+
+  .certi h2 {
+    font-size: 12px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+
+  .certi::before,
+  .certi-block:first-child:after {
+    content: "";
+    display: none;
+  }
+
+  .certi-block::after {
+    content: "";
+    position: absolute;
+    border: 0.5px solid #d6c08d;
+    left: 0;
+    right: 0;
+    top: -15px;
+  }
+
+  /* DỰ ÁN */
+  #project .container {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    width: 100%;
+  }
+
+  .prj-block {
+    margin-bottom: 5px;
+  }
+
+  .prj-block img {
+    width: 100%;
+  }
+
+  .prj-block1 {
+    text-align: center;
+  }
+
+  .prj-block2 {
+    justify-content: center;
+  }
+
+  /* FOOTER */
+  #footer span {
+    display: none;
+  }
+
+  #footer i {
+    font-size: 20px;
+  }
+
+  .viewmore,
+  .viewless {
+    text-transform: uppercase;
+    font-size: 7px;
+    padding: 1px 2px;
+  }
+}

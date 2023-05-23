@@ -1,0 +1,500 @@
+/* đặt giá trị margin và padding về 0 
+  đặt width và heigh bao gồm content, border và padding bằng box-sizing
+  vùng * cho toàn bộ phần tử (dễ bị ghi đè) cần thiết khi tạo css mới 
+   */
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.bg-grey {
+  background: #f7f7f7;
+}
+
+section > .container {
+  width: 1170px;
+  margin: auto;
+  display: block;
+
+  padding: 30px 50px;
+}
+
+body {
+  text-align: justify;
+  line-height: 1.5;
+  font-family: sans-serif;
+  margin: 20px;
+}
+
+h2 {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+  list-style-position: inside;
+}
+
+/* BANNER */
+/* vị trí đặt đoạn text */
+#banner {
+  position: relative;
+}
+
+/* đặt đoạn text nằm trên hình bằng thuộc tính position */
+.banner-text {
+  position: absolute;
+  text-align: center;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.banner-text h1 {
+  margin-bottom: 0;
+  font-size: 34px;
+}
+
+/* cắt hình bằng thuộc tính object với giá trị cover cắt bỏ phần ảnh ko cần thiết mà ko làm méo ảnh */
+#banner img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  object-position: 50% 60%;
+}
+
+/* NAVBAR */
+/* xoá padding top và bottom giống đề bài
+  sắp xếp các phần tử bằng flex và đặt nằm giữa với với thuộc tính justify-content giá trị center */
+#nav-bar .container {
+  width: auto;
+  padding-top: 0;
+  padding-bottom: 0;
+  display: flex;
+  justify-content: center;
+}
+
+/* đặt border theo đề bài
+  chỉnh đoạn text nằm giữa khối bằng flex
+  chỉnh đoạn text in hoa bằng text-transform */
+#nav-bar div {
+  font-size: 16px;
+  padding: 0 20px;
+  border-right: 1px solid #e9e9e9;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+}
+
+.nav-first {
+  border-left: 1px solid #e9e9e9;
+}
+
+/* riêng khối nằm giữa chỉnh 2 đoạn text thành cột bằng thuộc tính flex-direction
+  xoá in hoa đoạn text và đặt khoảng cách giống đề bài*/
+#nav-bar div:nth-child(3) {
+  display: inline;
+  text-align: center;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+/* chỉnh màu đoạn text thứ 2 trông khối thứ 3 giống đề bài */
+.nav-bar-job {
+  font-size: 10px;
+  color: #c6c2c2;
+}
+
+/* chỉnh lại màu icon */
+#nav-bar i {
+  color: #6699ff;
+}
+
+/* NÂNG CAO - BỔ SUNG ẢNH CÁ NHÂN */
+/* đặt kích thước ảnh 150x150 cắt phần thừa bằng object-fit giá trị cover không bị méo ảnh
+  bo tròn ảnh bằng boder-radius và đặt border bao quanh ảnh
+  đặt vị trí ảnh bằng position */
+.my-avatar {
+  height: 170px;
+  object-fit: cover;
+  object-position: 50% 50%;
+  border-radius: 100%;
+  border: 5px solid white;
+  position: absolute;
+  top: -80px;
+  left: 44%;
+}
+
+/* vị trí chứa ảnh my-avatar */
+#nav-bar {
+  position: relative;
+}
+
+/* THÔNG TIN CÁ NHÂN */
+/* dùng grid chia thành 2 cột bằng nhau, với chiều rộng bằng khối cha đặt width = 100% */
+#about .container {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(200px, 1fr));
+  width: 100%;
+  padding: 0;
+}
+
+#target {
+  padding: 50px 50px;
+}
+
+/* đặt màu khối text thứ 2 tương tự đề bài */
+#personal-info {
+  /* padding: 50px 250px 30px 50px; */
+  padding: 50px 50px;
+  background-color: #e9e9e9;
+}
+
+.info span {
+  font-weight: bold;
+}
+
+/* dãn dòng đoạn icon bằng margin-top
+  đặt lại màu icon */
+.info li:last-child {
+  margin-top: 20px;
+  color: #6699ff;
+}
+
+/* THÔNG TIN NGHỀ NGHIỆP */
+/* sắp xếp các khối thành 3 cột bằng grid 
+ dãn đều các khối bằng gap */
+#job-info .container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(200px, 50%));
+  width: 100%;
+  gap: 20px;
+  align-items: baseline;
+}
+
+/* đặt border xung quanh khối
+  chia các phần tử trong khối theo đề bài tỉ lệ 75%-25% với phần tử 1 và 2
+  đặt đoạn text bắt đầu từ trên xuống với align-content
+  dãn cách các hàng với gap */
+.job-block {
+  border: 0.5px solid #777;
+  display: grid;
+  grid-template-columns: 75% auto;
+  padding: 20px;
+}
+
+/* đặt phần tử thứ 3 từ cột 1 đến cột 2 bằng grid-column */
+.item3 {
+  grid-column: 1 / -1;
+}
+
+#job-info ul {
+  padding-left: 20px;
+}
+
+/* tạo chấm đầu dòng cho thẻ li bằng border
+  đặt vị trí bằng position */
+#job-info li::after {
+  content: "";
+  border: 3px solid #6699ff;
+  border-radius: 100%;
+  position: absolute;
+  top: 8px;
+  left: -13px;
+}
+
+/* vị trí đặt chấm đầu dòng
+  đặt margin-bottom cho giao diện tương tự đề bài */
+#job-info li {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.job-icon {
+  font-size: 30px;
+}
+
+.job-year {
+  font-style: italic;
+}
+
+/* chỉnh màu và bo tròn cho đoạn text */
+.job-year span {
+  color: white;
+  background: #6699ff;
+  border: 1px solid #6699ff;
+  padding: 0 10px;
+  border-radius: 10px;
+}
+
+/* SỞ THÍCH */
+/* sắp xếp khối icon nằm hàng ngang và đặt ở vị trí bắt đầu */
+.hobby {
+  display: flex;
+  gap: 19px;
+}
+
+/* sắp xếp icon nằm trên, text nằm dưới bằng flex */
+.flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 20px;
+}
+
+/* chỉnh màu và kích thước icon
+  vị trí đặt đường tròn bao quanh icon */
+.flex i {
+  font-size: 18px;
+  padding: 10px;
+  color: #6699ff;
+  position: relative;
+}
+
+/* tạo đường tròn bao quanh icon bằng border */
+.flex i::after {
+  content: "";
+  border: 1px solid #6699ff;
+  width: 45px;
+  height: 45px;
+  border-radius: 100%;
+  top: -3px;
+  right: -3px;
+  position: absolute;
+}
+
+/* NGÔN NGỮ VÀ KỸ NĂNG */
+/* tạo thang điểm gồm 3 bậc với màu #199cdb
+  đặt thang điểm nằm ngang bằng display giá trị inline-block */
+.point1 {
+  background: #199cdb;
+  display: inline-block;
+  height: 2px;
+  margin-right: 10px;
+  width: 45px;
+}
+
+/* tạo thang điểm gồm 3 bậc với màu #e9e9e9 */
+.point2 {
+  background: #e9e9e9;
+  display: inline-block;
+  height: 2px;
+  margin-right: 10px;
+  width: 45px;
+}
+
+/* CHỨNG CHỈ - GIẢI THƯỞNG */
+/* tạo 2 cột và 2 hàng bằng grid */
+#certificate .container {
+  width: 100%;
+}
+
+.certi {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(200px, 1fr));
+  gap: 50px;
+}
+
+/* sắp xếp khối image và khối text bằng flex
+  đặt khoảng cách giữa 2 khối bằng column-gap */
+.certi-block {
+  display: flex;
+  column-gap: 15px;
+}
+
+/* chỉnh lại kích thước ảnh */
+.certi img {
+  width: 180px;
+}
+
+.certi h6 {
+  font-weight: bold;
+  font-size: 12px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.certi p {
+  font-size: 12px;
+  margin: 0;
+}
+
+/* vị trí đặt đường kẻ từ trên xuống */
+.certi-block:first-child {
+  position: relative;
+}
+
+/* tạo đường kẻ dọc bằng border
+  đặt đường kẻ dọc nằm vị trí giữa khối 1 và 2 bằng position */
+.certi-block:first-child:after {
+  content: "";
+  position: absolute;
+  border: 0.5px solid #d6c08d;
+  top: 0;
+  bottom: 0;
+  right: -30px;
+}
+
+/* vị trí đặt đường kẻ ngang */
+.certi {
+  position: relative;
+}
+
+/* tạo đường kẻ ngang từ trái qua phải bằng border */
+.certi::before {
+  content: "";
+  position: absolute;
+  border: 0.5px solid #d6c08d;
+  left: 0;
+  right: 0;
+  top: 120px;
+}
+
+/* DỰ ÁN */
+/* tạo dự án 3 cột bằng grid
+  khoảng các giữa các cột bằng column-gap */
+#project .container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(200px, 1fr));
+  width: 100%;
+  column-gap: 30px;
+}
+
+/* thẻ h1 đặt từ vị trí cột thứ nhất đến hết cột thứ 3 */
+#project h2 {
+  grid-column: 1 / -1;
+  margin-top: 30px;
+}
+
+/* tạo border bao quanh toàn bộ khối */
+.prj-block {
+  border: 0.5px solid #777;
+}
+
+/* chỉnh font chữ ở khối div thứ 1
+  tạo border trên và dưới
+  tạo khoảng cách đầu dòng bằng padding (margin sẽ làm mất đoạn border) */
+.prj-block1 {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 10px;
+  border-top: 0.5px solid #777;
+  border-bottom: 0.5px solid #777;
+}
+
+.prj-block2 {
+  padding: 10px 5px;
+}
+
+.prj-block2 i,
+.prj-block2 span {
+  margin-right: 10px;
+}
+
+.prj-year {
+  background-color: #6699ff; /* chỉnh màu background */
+  border: 1px solid #6699ff; /* tạo border và màu giống background */
+  border-radius: 10px; /* bo tròn border */
+  padding: 0 15px; /* padding-top, bottom = 0; padding-left, right = 15px */
+  color: white; /* đặt text màu trắng */
+}
+
+.prj-block3,
+td,
+th {
+  padding: 10px; /* tạo khoảng cách đầu dòng bằng padding (margin sẽ có khoảng trắng border) */
+  vertical-align: top; /* đặt vị trí đoạn text ở top */
+  border-top: 0.5px solid #777; /* tạo border-top cho table */
+  font-weight: normal; /* chỉnh đoạn text trong ô (tiêu đề) từ in hoa về in thường */
+}
+
+.prj-block3 {
+  border-collapse: collapse; /* ghép border trong table lại với nhau (trong table gồm các thẻ td, th và mỗi thẻ tương ứng với 1 border */
+}
+
+/* LIÊN HỆ */
+#footer .container {
+  text-align: center; /* đặt footer nằm giữa bằng text-align */
+  width: 100%; /* chỉnh lại width container để phần tử không tràn ra ngoài */
+}
+
+#footer li {
+  display: inline-block; /* đặt thẻ li nằm ngang bằng display giá trị inline-block */
+  margin-right: 20px; /* đặt khoảng cách lề phải  */
+}
+
+#footer i {
+  color: #6699ff; /* đặt màu icon */
+}
+
+/* CHỨC NĂNG ẨN THÔNG TIN CÁ NHÂN */
+
+.hidden {
+  display: none; /* tạo class hidden để ẩn phần tử mong muốn */
+}
+
+#my-email {
+  padding: 5px;
+  width: 100%;
+}
+
+#submit {
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #6699ff;
+  border-color: #6699ff;
+  border-radius: 5px;
+  color: #f7f7f7;
+}
+
+#submit:hover {
+  cursor: pointer;
+}
+
+/* CHỨC NĂNG ẨN THÔNG TIN NGHỀ NGHIỆP
+    (tham khảo W3Schools - CSS :hover Selector) */
+.job-block {
+  padding-bottom: 30px;
+}
+
+.job-block h2 {
+  margin-bottom: 0;
+}
+
+.job-block:hover .viewmore,
+.job-block:hover .viewless {
+  display: inline-block;
+}
+
+.viewmore,
+.viewless {
+  text-transform: uppercase;
+  font-size: 10px;
+  padding: 3px 5px;
+  border-radius: 15px;
+  background-color: lightyellow;
+  position: absolute;
+  display: none;
+}
+
+.viewmore:hover,
+.viewless:hover {
+  cursor: pointer;
+}
+
+.more-info {
+  margin-top: 30px;
+}
+
+/* Bổ sung Project Charter cho các dự án */
+.prj-block a {
+  color: black; /* đặt lại màu cho thẻ a chứa dự án */
+}
